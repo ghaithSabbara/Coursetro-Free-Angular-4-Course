@@ -5,9 +5,37 @@
   </h1>
   <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
+<app-my-new-component></app-my-new-component>
 <ul>
-  <li>
+  <li *ngFor = "let arr of myVar"> {{arr}} </li>
+</ul>
+<div *ngIf = "ok; then tmpl1 else tmpl2"></div>
+<ng-template #tmpl1>
+  <h1> True </h1>
+</ng-template>
+<ng-template #tmpl2>
+    <h1> False </h1>
+  </ng-template>
+  <img  src="{{angularLogo}}" >
+  <img [src] = "angularLogo" >
+  <img bind-src = "angularLogo">
+<button [disabled] = "buttonStatus == true" >My button </button>
+<button (click) = "myEvent ($event)">Event button</button>
+
+<h2 [class]="titleClass">Here are some links to help you start: </h2>
+
+<h2 [ngClass]="titleClasses">Hello Bind Class ... </h2>
+
+<h1 [style.color]="titleStyle">Hello Bind Style ... </h1>
+
+<h1 [style.color]="style ? 'green': 'blue'">Hello Bind Style 2 !!!</h1>
+
+<h1 [ngStyle]="styles">Ng Style demo!!!</h1>
+
+<p [@myAwesomeAnimation]='state' (click)="animateMe()">I will animate</p>
+
+<ul>
+  <li> 
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
   </li>
   <li>
@@ -17,4 +45,6 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+
+
 
